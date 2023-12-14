@@ -73,25 +73,25 @@ export class AppComponent {
   selected = signal<number | undefined | null>(undefined);
   id: number = 1;
 
-  #random(max: number) {
+  _random(max: number) {
     return Math.round(Math.random() * 1000) % max;
   }
 
-  buildData(count: number) {
+  buildData(count: number = 1000) {
     const data: Data[] = new Array(count);
     for (let i = 0; i < count; i++) {
       data[i] = {
         id: this.id++,
-        label: `${adjectives[this.#random(adjectives.length)]} ${
-          colours[this.#random(colours.length)]
-        } ${nouns[this.#random(nouns.length)]}`,
+        label: `${adjectives[this._random(adjectives.length)]} ${
+          colours[this._random(colours.length)]
+        } ${nouns[this._random(nouns.length)]}`,
       };
     }
     return data;
   }
 
   run() {
-    this.data.set(this.buildData(1000));
+    this.data.set(this.buildData());
     this.selected.set(null);
   }
 

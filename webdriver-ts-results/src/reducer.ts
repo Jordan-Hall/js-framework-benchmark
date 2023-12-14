@@ -79,7 +79,7 @@ const mappedFrameworks = frameworks.map((f) => ({
   name: f.name,
   dir: f.dir,
   displayname: removeKeyedSuffix(f.name),
-  issues: f.issues ?? [],
+  issues:  [],
   type: f.keyed ? FrameworkType.KEYED : FrameworkType.NON_KEYED,
   frameworkHomeURL: f.frameworkHomeURL,
 }));
