@@ -23,8 +23,8 @@
     "rebuild": "node rebuild-single.js",
     "rebuild-ci": "node rebuild-single.js --ci",
     "zip": "node cli.js zip",
-    "format": "prettier . \"!(broken-frameworks|frameworks)/**/*\" -w",
-    "lint": "eslint . --ignore-pattern 'broken-frameworks' --ignore-pattern 'frameworks'"
+    "format": "prettier . \"!(frameworks)/**/*\" -w",
+    "lint": "eslint .  --ignore-pattern 'frameworks'"
   },
   "keywords": [
     "benchmark",
